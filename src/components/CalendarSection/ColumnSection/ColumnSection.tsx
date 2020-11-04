@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
+import i18n from 'i18next';
 import React, { useContext } from 'react';
 
 import Context from '../../../context';
-import { Weeks } from '../../../types/commons';
 import { DateData } from '../../../types/getSchedule';
 import ScheduleSection from '../ScheduleSection';
 import S from './styles';
@@ -38,7 +38,7 @@ export default function ColumnSection(props: Props) {
     <S.Container hasData={hasData} data-testid="container">
       <S.TitleBox>
         <S.TitleText hasData={hasData} data-testid="dayOfWeek">
-          {Weeks[day]}
+          {i18n.t(`day.${day}`)}
         </S.TitleText>
         <S.TitleText hasData={hasData} data-testid="dayText">
           {`${date}`.padStart(2, '0')}
