@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { getScheduleResponse } from '../types/getSchedule';
+import { GetScheduleResponse } from '../types/getSchedule';
 import { formatScheduleResponse } from './utils';
 
 const apiList = [
@@ -10,8 +10,8 @@ const apiList = [
 ];
 
 export const getSchedule = (num: number) => {
-  return axios.get<getScheduleResponse>(apiList[num], {
+  return axios.get<GetScheduleResponse>(apiList[num], {
     responseType: 'json',
-    transformResponse: (r: getScheduleResponse) => formatScheduleResponse(r),
+    transformResponse: (r: GetScheduleResponse) => formatScheduleResponse(r),
   });
 };

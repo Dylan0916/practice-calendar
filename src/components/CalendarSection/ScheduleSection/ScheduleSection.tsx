@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { DisplayData } from '../types';
 import S from './styles';
@@ -7,7 +7,7 @@ interface Props {
   data: DisplayData[];
 }
 
-export default function ScheduleSection(props: Props) {
+const ScheduleSection: FC<Props> = props => {
   const { data } = props;
 
   return (
@@ -24,3 +24,5 @@ export default function ScheduleSection(props: Props) {
     </S.Container>
   );
 }
+
+export default ScheduleSection;

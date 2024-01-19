@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import { DateData, getScheduleResponse } from '../types/getSchedule';
+import { DateData, GetScheduleResponse } from '../types/getSchedule';
 
 function handleFormat(acc: DateData[], cur: DateData) {
   const { start, end } = cur;
@@ -22,7 +22,7 @@ function handleFormat(acc: DateData[], cur: DateData) {
   }
 }
 
-export function formatScheduleResponse(resp: getScheduleResponse) {
+export function formatScheduleResponse(resp: GetScheduleResponse) {
   if (!resp) {
     return { available: [], booked: [] };
   }

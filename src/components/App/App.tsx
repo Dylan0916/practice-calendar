@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import i18n from 'i18next';
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 import Context from '../../context';
 import { getTime } from '../../utils/timeHelpers';
@@ -28,13 +28,13 @@ function App() {
     setApiNum(preNum => preNum + 1);
   };
 
-  const value = {
+  const value = useMemo(() => ({
     apiNum,
     startTime: time.startTime,
     endTime: time.endTime,
     onPrevClick,
     onNextClick,
-  };
+  }));
 
   return (
     <Context.Provider value={value}>

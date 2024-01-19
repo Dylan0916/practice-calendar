@@ -3,7 +3,7 @@ export interface DateData {
   end: Date;
 }
 
-export interface getScheduleResponse {
+export interface GetScheduleResponse {
   available: DateData[];
   booked: DateData[];
 }

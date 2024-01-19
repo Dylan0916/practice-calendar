@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import i18n from 'i18next';
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 
 import Context from '../../../context';
 import { DateData } from '../../../types/getSchedule';
@@ -14,7 +14,7 @@ interface Props {
   booked: DateData[];
 }
 
-export default function ColumnSection(props: Props) {
+const ColumnSection: FC<Props> = props => {
   const { day, available, booked } = props;
   const { startTime } = useContext(Context);
   const currentDay = dayjs(startTime).set('d', day);
@@ -48,3 +48,5 @@ export default function ColumnSection(props: Props) {
     </S.Container>
   );
 }
+
+export default ColumnSection;
